@@ -2,73 +2,6 @@
 <Results version="1.0">
 <ReportNode type="testrun">
 <ReportNode type="Iteration">
-<ReportNode type="Context">
-<ReportNode type="Step">
-<Data>
-    <Name>StartUp Browser.Navigate</Name>
-    <Description>Navigate to https://oci.barwabank.com/BBOCUAT/barwa/#/auth/login</Description>
-    <StartTime>2021-09-29 09:52:08</StartTime>
-    <Result>Done</Result>
-    <Extension>
-      <TestObject>
-        <Path>
-          <Object>
-            <Type>Browser</Type>
-            <Name><![CDATA[StartUp Browser]]></Name>
-          </Object>
-        </Path>
-        <Operation>Navigate</Operation>
-        <OperationData><![CDATA[Navigate to https://oci.barwabank.com/BBOCUAT/barwa/#/auth/login]]></OperationData>
-      </TestObject>
-      <IconKey>0669325bf55e4f2f9e6e4eb58f53a1b5</IconKey>
-      <IsPlainTextNodeName>True</IsPlainTextNodeName>
-    </Extension>
-    <DeviceInfo />
-  </Data>
-</ReportNode>
-<ReportNode type="Step">
-<Data>
-    <Name>StartUp Browser.Sync</Name>
-    <Description />
-    <StartTime>2021-09-29 09:52:09</StartTime>
-    <Result>Done</Result>
-    <Extension>
-      <TestObject>
-        <Path>
-          <Object>
-            <Type>Browser</Type>
-            <Name><![CDATA[StartUp Browser]]></Name>
-          </Object>
-        </Path>
-        <Operation>Sync</Operation>
-      </TestObject>
-      <IconKey>0669325bf55e4f2f9e6e4eb58f53a1b5</IconKey>
-      <IsPlainTextNodeName>True</IsPlainTextNodeName>
-    </Extension>
-    <DeviceInfo />
-  </Data>
-</ReportNode>
-<Data>
-    <Name>StartUp Browser</Name>
-    <Description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;span style="text-align : left; font-size : 12px; "&gt;Local Browser&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</Description>
-    <StartTime>2021-09-29 09:52:08</StartTime>
-    <Duration>2</Duration>
-    <Result>Done</Result>
-    <Extension>
-      <TestObject>
-        <Path>
-          <Object>
-            <Type>Browser</Type>
-            <Name><![CDATA[StartUp Browser]]></Name>
-          </Object>
-        </Path>
-        <OperationData><![CDATA[<table><tr><td><span style="text-align : left; font-size : 12px; ">Local Browser</span></td></tr></table>]]></OperationData>
-      </TestObject>
-      <IconKey>0669325bf55e4f2f9e6e4eb58f53a1b5</IconKey>
-      <IsPlainTextNodeName>True</IsPlainTextNodeName>
-    </Extension>
-  </Data>
-</ReportNode>
 <ReportNode type="Action">
 <ReportNode type="Context">
 <ReportNode type="Context">
@@ -76,11 +9,11 @@
 <Data>
     <Name>Username.Set</Name>
     <Description>"2008"</Description>
-    <StartTime>2021-09-29 09:52:10</StartTime>
+    <StartTime>2021-09-29 16:11:31</StartTime>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -112,7 +45,7 @@
           </Property>
         </Properties>
       </TestObject>
-      <IconKey>1b3822f45beb49a0bb45e3a35df6d584</IconKey>
+      <IconKey>cfee33290291407691b6fa643b861569</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <DeviceInfo />
@@ -120,13 +53,13 @@
 </ReportNode>
 <ReportNode type="Step">
 <Data>
-    <Name>Password.SetSecure</Name>
-    <Description>"61540ae3cf5dbece6e17773c26bf4f010b0a0fc7902099af9b7e"</Description>
-    <StartTime>2021-09-29 09:52:10</StartTime>
+    <Name>Password.Set</Name>
+    <Description>"Qatar@2021"</Description>
+    <StartTime>2021-09-29 16:11:31</StartTime>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -141,8 +74,8 @@
             <Name><![CDATA[Password]]></Name>
           </Object>
         </Path>
-        <Operation>SetSecure</Operation>
-        <OperationData><![CDATA["61540ae3cf5dbece6e17773c26bf4f010b0a0fc7902099af9b7e"]]></OperationData>
+        <Operation>Set</Operation>
+        <OperationData><![CDATA["Qatar@2021"]]></OperationData>
         <Properties>
           <Property>
             <Name><![CDATA[type]]></Name>
@@ -158,7 +91,7 @@
           </Property>
         </Properties>
       </TestObject>
-      <IconKey>1b3822f45beb49a0bb45e3a35df6d584</IconKey>
+      <IconKey>cfee33290291407691b6fa643b861569</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <DeviceInfo />
@@ -168,11 +101,11 @@
 <Data>
     <Name>Login.Click</Name>
     <Description />
-    <StartTime>2021-09-29 09:52:10</StartTime>
+    <StartTime>2021-09-29 16:11:31</StartTime>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -203,7 +136,7 @@
           </Property>
         </Properties>
       </TestObject>
-      <IconKey>9e10ca94f5a841b3b723f68aaf5b83ff</IconKey>
+      <IconKey>fa38201fb6f24a378c3dc2406ef5593a</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <DeviceInfo />
@@ -213,11 +146,11 @@
 <Data>
     <Name>signOut.Exist</Name>
     <Description>"Object exists"</Description>
-    <StartTime>2021-09-29 09:52:11</StartTime>
+    <StartTime>2021-09-29 16:11:33</StartTime>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -249,7 +182,7 @@
           </Property>
         </Properties>
       </TestObject>
-      <IconKey>e42e5a41ef48476ca84dba8086cb5922</IconKey>
+      <IconKey>1d4614e8743d46c9a6ea89caf039f9f1</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <DeviceInfo />
@@ -258,12 +191,12 @@
 <Data>
     <Name>Dukhan Bank</Name>
     <Description>Page</Description>
-    <StartTime>2021-09-29 09:52:10</StartTime>
-    <Duration>1</Duration>
+    <StartTime>2021-09-29 16:11:31</StartTime>
+    <Duration>2</Duration>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -276,7 +209,7 @@
         </Path>
         <OperationData><![CDATA[Page]]></OperationData>
       </TestObject>
-      <IconKey>9fc78af2d1b849f3af9545c0d962ccfd</IconKey>
+      <IconKey>ffb0f0489a38436c8a1635254468a2b7</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
   </Data>
@@ -284,12 +217,12 @@
 <Data>
     <Name>Dukhan Bank</Name>
     <Description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;span style="text-align : left; font-size : 12px; "&gt;Local Browser&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</Description>
-    <StartTime>2021-09-29 09:52:10</StartTime>
-    <Duration>1</Duration>
+    <StartTime>2021-09-29 16:11:31</StartTime>
+    <Duration>2</Duration>
     <Result>Done</Result>
     <Extension>
       <TestObject>
-        <Repository>Local</Repository>
+        <Repository>C:\GitHub\DukhanWeb_Automation\Shared Object Repositories\TC_PL_09.tsr</Repository>
         <Path>
           <Object>
             <Type>Browser</Type>
@@ -298,7 +231,7 @@
         </Path>
         <OperationData><![CDATA[<table><tr><td><span style="text-align : left; font-size : 12px; ">Local Browser</span></td></tr></table>]]></OperationData>
       </TestObject>
-      <IconKey>0669325bf55e4f2f9e6e4eb58f53a1b5</IconKey>
+      <IconKey>61d8e4b4d9d841e0ad2aa46fd0c3e580</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
   </Data>
@@ -307,10 +240,10 @@
 <Data>
     <Name>Login Authorization</Name>
     <Description>The user is login succesfully.</Description>
-    <StartTime>2021-09-29 09:52:11</StartTime>
+    <StartTime>2021-09-29 16:11:33</StartTime>
     <Result>Passed</Result>
     <Extension>
-      <IconKey>83103b85bb1742baa7ce623a86d6efd6</IconKey>
+      <IconKey>dea34c94b7e54e0f85e2abecc3a58235</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
       <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
     </Extension>
@@ -319,12 +252,12 @@
 <Data>
     <Name>Action1</Name>
     <Description />
-    <StartTime>2021-09-29 09:52:10</StartTime>
-    <Duration>1</Duration>
+    <StartTime>2021-09-29 16:11:22</StartTime>
+    <Duration>11</Duration>
     <Result>Passed</Result>
     <InputParameters />
     <Extension>
-      <IconKey>c41f63f4697c4d5cb73ea9906158dbd4</IconKey>
+      <IconKey>fd48154e0f954aeea193bdc689c771de</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
   </Data>
@@ -332,11 +265,11 @@
 <Data>
     <Name>Action0</Name>
     <Description />
-    <StartTime>2021-09-29 09:52:08</StartTime>
-    <Duration>3</Duration>
+    <StartTime>2021-09-29 16:10:59</StartTime>
+    <Duration>34</Duration>
     <Result>Passed</Result>
     <Extension>
-      <IconKey>aeab5d98663543aa87e6c29470e8c414</IconKey>
+      <IconKey>21ce56a5b38a44e58f0183b13f57ea75</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <Index>1</Index>
@@ -361,22 +294,31 @@
     <ToolVersion>0</ToolVersion>
     <ToolVersionStringLiteral>15.0.2</ToolVersionStringLiteral>
     <Description />
-    <StartTime>2021-09-29 09:52:07</StartTime>
-    <Duration>4</Duration>
+    <StartTime>2021-09-29 16:10:58</StartTime>
+    <Duration>35</Duration>
     <Result>Passed</Result>
     <InputParameters />
     <Extension>
-      <IconKey>7edca12a1ca24f14b53f7665c9d0bfe3</IconKey>
+      <ParallelRunnerEnvInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <ID />
+        <Manufacturer />
+        <Model />
+        <OsType />
+        <OsVersion />
+        <DesktopBrowser>Google Chrome</DesktopBrowser>
+        <ErrorMessage />
+      </ParallelRunnerEnvInfo>
+      <IconKey>7ff3a6ee4cdd47249e76cab213dc5f11</IconKey>
       <IsPlainTextNodeName>True</IsPlainTextNodeName>
     </Extension>
     <Environment>
       <Timezone>+03:00:00</Timezone>
       <Locale>English (United States)</Locale>
-      <User>BARWABANK\v.s.bhargav</User>
-      <CpuInfo>Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz</CpuInfo>
-      <NumberOfCores>8</NumberOfCores>
-      <TotalMemory>8012</TotalMemory>
-      <HostName>Barwabank.local\BBHODT302</HostName>
+      <User>BARWABANK\v.g.madhu</User>
+      <CpuInfo>Intel(R) Core(TM) i5-4440S CPU @ 2.80GHz</CpuInfo>
+      <NumberOfCores>4</NumberOfCores>
+      <TotalMemory>8009</TotalMemory>
+      <HostName>Barwabank.local\BBHODT303</HostName>
       <OSInfo>Windows 10</OSInfo>
     </Environment>
     <TestedApplications />
@@ -386,8 +328,8 @@
   </Data>
 </ReportNode>
 <GeneralInfo>
-    <ResultName>Res1</ResultName>
-    <RunStartTime>2021-09-29 09:52:07</RunStartTime>
+    <ResultName>TC_PL_09</ResultName>
+    <RunStartTime>2021-09-29 16:10:58</RunStartTime>
     <Timezone>+03:00:00</Timezone>
     <OrchestrationToolName>Micro Focus Unified Functional Testing</OrchestrationToolName>
     <OrchestrationToolVersion>0</OrchestrationToolVersion>
