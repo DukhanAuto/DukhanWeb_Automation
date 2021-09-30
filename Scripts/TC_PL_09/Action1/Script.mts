@@ -6,8 +6,8 @@ Total_Rows= Datatable.GetRowCount
 
 
 
-Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set "2008" @@ script infofile_;_ZIP::ssf1.xml_;_
-Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").SetSecure "61540ae3cf5dbece6e17773c26bf4f010b0a0fc7902099af9b7e" @@ script infofile_;_ZIP::ssf2.xml_;_
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set datatable.Value("USERNAME",Strsheet) @@ script infofile_;_ZIP::ssf1.xml_;_
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").Set datatable.Value("PASSWORD",Strsheet) @@ script infofile_;_ZIP::ssf2.xml_;_
 Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Login").Click @@ script infofile_;_ZIP::ssf3.xml_;_
 
 If Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("signOut").Exist(10) Then
