@@ -19,5 +19,11 @@ Function LoginInfo(StrUsername,Strpassword)
 
 End Function
 
+<<<<<<< Updated upstream
+=======
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set datatable.Value("USERNAME",Strsheet) @@ script infofile_;_ZIP::ssf1.xml_;_
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").Set datatable.Value("PASSWORD",Strsheet) @@ script infofile_;_ZIP::ssf2.xml_;_
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Login").Click @@ script infofile_;_ZIP::ssf3.xml_;_
+>>>>>>> Stashed changes
 
  @@ script infofile_;_ZIP::ssf4.xml_;_
