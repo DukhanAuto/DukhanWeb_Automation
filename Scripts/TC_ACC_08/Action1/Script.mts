@@ -8,7 +8,7 @@ Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("My Accounts").Click @@ sc
 Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("200000328809").Click @@ script infofile_;_ZIP::ssf3.xml_;_
 Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Highlight
 Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Click @@ script infofile_;_ZIP::ssf5.xml_;_
-wait(5)
+wait(5) 
 
 StrPastMonth = StrPreviousMonthDate("m",-6,Date)
 Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Start Date").Set StrPastMonth 
