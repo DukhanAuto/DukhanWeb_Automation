@@ -1,0 +1,242 @@
+﻿''This function is used to generate current date
+''==========================================================
+
+Function CurrentDate()
+
+	NewDate = Date
+	
+End Function
+
+''This function is used to generate previous month date
+''======================================================================
+Function StrPreviousMonthDate(Minterval,months,Strdate)
+      	Err.Clear
+	On Error resume Next
+	
+       Dim ONewDate
+    	ONewDate = Dateadd(Minterval,months,Strdate)
+	StrPreviousMonthDate = ONewDate
+       
+      	If Err.Number =  0 Then
+	End If
+	
+End Function
+
+''This function is used to delete the Pdf files from perticular folder
+''===========================================================================
+Function DeletePdfFiles(target_folderPath)
+	Err.Clear
+	On Error resume Next
+	DeletePdfFiles = false 
+	
+	target_folder = "C:\GitHub\DukhanWeb_Automation\Test Data\Downloads"
+	Set fso = CreateObject("Scripting.Filesystemobject")
+'	Set folder = fso.GetFolder(target_folder)
+'	Set files = folder.Files
+	
+'	ofileDelete = fso.DeleteFile(target_folder  & "\*.pdf")
+	If Ofso.FileExists(target_folder)  = false Then
+		Reporter.ReportEvent micWarning,"The"&target_folder,"The" & target_folder &"is not found"
+	Else 
+	  Ofso.DeleteFile(target_folder & "\*.pdf")
+		Reporter.ReportEvent micDone,"The"& target_folder,"The" & target_folder &" is exist and pdf files are deleted"
+	End If
+	
+	If Err.Number =  0 Then
+	DeletePdfFiles =  True
+	End If
+	
+End Function
+''This function is used to delete Excel files
+''=================================================
+Function DeleteExcelFiles(target_folderPath)
+	Err.Clear
+	On Error resume Next
+	DeletePdfFiles = false 
+	target_folder = "C:\GitHub\DukhanWeb_Automation\Test Data\Downloads"
+	Set fso = CreateObject("Scripting.Filesystemobject")
+
+'	ofileDelete = fso.DeleteFile(target_folder  & "\*.pdf")
+	If Ofso.FileExists(target_folder)  = false Then
+		Reporter.ReportEvent micWarning,"The"&target_folder,"The" & target_folder &"is not found"
+	Else 
+	  Ofso.DeleteFile(target_folder & "\*.xls")
+		Reporter.ReportEvent micDone,"The"& target_folder,"The" & target_folder &" is exist and excel files are deleted"
+	End If
+	
+	If Err.Number =  0 Then
+	DeletePdfFiles =  True
+	End If
+	
+End Function
+
+
+
+''This function is used to create Folder and file at run time 
+''================================================================
+Function CreateFolderandFile(strFolderpath,strFile)
+	Err.Clear
+	On Error resume Next
+	CreateFolderandFile = false 
+	
+	Dim objFSO, objFSOText
+'	Dim strFolderpath, strFile
+	strFolderpath = "C:\GitHub\DukhanWeb_Automation\Test Data\IBAN"
+	strFile = "C:\GitHub\DukhanWeb_Automation\Test Data\IBAN\IBAN Numbers.txt"
+	
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	
+	' Check the folder "TestDir" is exists or not
+	If objFSO.FolderExists(strFolderpath) Then
+	   Print "Folder already exists : " & strFolderpath
+	Else
+	   objFSO.CreateFolder(strFolderpath)
+	   Print "Folder created: " & strFolderpath
+	End If
+	
+	' Check the file "Sample.txt" is exists or not
+	If objFSO.FileExists(strFile) Then
+	      Print "File already exists : " & strFolderpath & strFile
+	Else
+	     objFSO.CreateTextFile(strFolderpath & strFile)
+	      Print "File created " & strFolderpath & strFile
+	End If 
+	
+	If Err.Number =  0 Then
+	CreateFolderandFile =  True
+	End If
+	
+End Function
+
+''This function is used to paste the copied content from web application into existing text file 
+''========================================================================================
+Function EnterDataInToTextFile(strFile)
+	Err.Clear
+	On Error resume Next	
+	EnterDataInToTextFile = False
+	
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	Set ofile = objFSO.OpenTextFile(strFile,2,1)
+	ofile.WriteLine "This is IBAN is copied on : "& now 
+	
+	If Err.Number =  0 Then
+	EnterDataInToTextFile =  True
+	End If
+	
+End Function
+
+''This function is used to save the downloded file
+''==================================================================
+
+Function SaveDownloadfile(StrFilepath)
+	Err.Clear
+	On Error resume Next
+	SaveDownloadfile = False
+	StrFilepath = datatable.Value("STRFILE_PATH","Global")
+	IF Window("Google Chrome").Dialog("Save As").WinEdit("File name:").Exist(10) Then
+		Window("Google Chrome").Dialog("Save As").WinEdit("File name:").Set StrFilepath
+		reporter.ReportEvent micDone, "Download the File","Able to download the file  : " &  StrFilepath &" Successfully matched as Expected"
+	Else
+		reporter.ReportEvent micWarning, "Download the File","Unable to download the file Not as expected"
+	End If
+	Wait 3
+	IF Window("Google Chrome").Dialog("Save As").WinButton("Save").Exist(8) Then
+		Window("Google Chrome").Dialog("Save As").WinButton("Save").Click
+		reporter.ReportEvent micDone, "Click on Save button","Save Button Exist and Clicked Sucessfully matched as expected"
+	Else
+		reporter.ReportEvent micWarning, "Click on Save button","Unable to click on SaveButton Not matched as expected"
+	End If
+	Wait 5
+	IF Window("Google Chrome").Dialog("Save As").Dialog("Confirm Save As").WinButton("Yes").Exist(8) Then
+	     Window("Google Chrome").Dialog("Save As").Dialog("Confirm Save As").WinButton("Yes").Click
+	End If
+	
+	If Err.Number =  0 Then
+		SaveDownloadfile =  True
+	End If
+	
+End Function
+
+''=====================================
+Function fnFindFile(FileName,FileExtention)
+	
+	BlnFileExist = false
+	StrFolderpath = "C:\GitHub\DukhanWeb_Automation\Test Data\Downloads"
+
+	Set Ofso = Createobject ("Scripting.FilesystemObject")
+	Set Ofolder = Ofso.GetFolder(StrFolderpath)
+	Set AllFiles = Ofolder.Files
+	For each File in AllFiles
+		If left(File.name,19) = FileName and right(File.Name,4) = FileExtention Then   ''need to update the lenth of the file
+		   StrFileName = File.Name
+		 BlnFileExist = true
+		 Exit for
+		End If
+	Next
+	If BlnFileExist = true Then
+		 Reporter.ReportEvent micPass,"Download the file","The " &StrFileName & "is downloaded successfully" 
+		 else
+		 Reporter.ReportEvent micFail,"Download the file","The file is not downloaded"
+	End If
+	
+End Function
+
+Function fnFindFileDelete(FileName,FileExtention)
+	
+	BlnFileExist = false
+	StrFolderpath = "C:\GitHub\DukhanWeb_Automation\Test Data\Downloads"
+
+	Set Ofso = Createobject ("Scripting.FilesystemObject")
+	Set Ofolder = Ofso.GetFolder(StrFolderpath)
+	Set AllFiles = Ofolder.Files
+	For each File in AllFiles
+	
+'		stfile = "Account-Details (2)"
+'		Set OReg = New RegExp
+'		OReg.Global = true
+'		OReg.Ignorecase = true
+'		OReg.Pattern = "Account-Details .*"
+'		If OReg.test(stfile) Then
+'		    OReg.Execute(stfile).item(0).value
+'		    Reporter.ReportEvent micDone,"File name","The filenane is matched"
+'		 Else 
+'		    Reporter.ReportEvent micWarning,"File name","The filename is not matched"
+'		 End If
+		
+		If left(File.name,15) = FileName and right(File.Name,4) = FileExtention Then
+		   StrFileName = File.Name
+		   Ofso.DeleteFile(StrFileName)
+		 BlnFileExist = true
+		End If
+	Next
+	If BlnFileExist = true Then
+		 Reporter.ReportEvent micPass,"Delete file","The " &StrFileName & "is deleted successfully" 
+		 else
+		 Reporter.ReportEvent micFail,"Delete file","The file is not deleted"
+	End If
+	
+End Function
+
+''This function is used to import data from excel sheet
+''==========================================================
+'Function fnLoadExcelFileToDatatable()
+'
+'
+'	
+'End Function
+''                  Regular expression code
+'=======================================================
+'stfile = "Saving 100000010916"
+'Set OReg = New RegExp
+'		OReg.Global = true
+'		OReg.Ignorecase = true
+'		OReg.Pattern = "((Current)|(Saving)|(Faseel)).[0-9]{12}"
+'set omatches = OReg.test(stfile)
+'Print omatches.count
+''=============================================
+'Set WSH = CreateObject("WScript.Shell")
+'WSH.SendKeys "^+{DELETE}"
+'
+'systemutil.Run "Chrome.exe","chrome://settings/clearBrowserData"
+
+'Browser("Dukhan Bank").

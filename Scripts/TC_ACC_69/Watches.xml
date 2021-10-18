@@ -1,0 +1,8 @@
+﻿<Properties>
+  <WatchEntry0 value="StrRowCount" />
+  <WatchEntry1 value="StrExcepectedText" />
+  <WatchEntry2 value="StrActualTextBrowser" />
+  <WatchEntry3 value="StrActualText" />
+  <WatchEntry4 value="TotalRowCount" />
+  <WatchEntry5 value="TotalRowCount" />
+</Properties>

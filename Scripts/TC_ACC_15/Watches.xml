@@ -1,0 +1,5 @@
+﻿<Properties>
+  <WatchEntry0 value="StrFilepath" />
+  <WatchEntry1 value="StrFilepath" />
+  <WatchEntry2 value="Browser(&quot;Dukhan Bank&quot;).Page(&quot;Dukhan Bank&quot;).WebElement(&quot;signOut&quot;).Click" />
+</Properties>

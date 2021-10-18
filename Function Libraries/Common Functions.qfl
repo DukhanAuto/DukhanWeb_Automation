@@ -1,43 +1,75 @@
-﻿
+﻿''This function is used to close the all opened browsers
+''======================================================
+ Function CloseAllBrowsers()
+ 
+	Err.Clear
+	On Error Resume Next 
+	
+	Set Odisc = Description.Create
+	Odisc.Add "MicClass","Browser"
+	
+	Set OBrowserCol = Desktop.ChildObjects(Odisc)
+	
+	For J = 0 To OBrowserCol.count-1 Step 1
+	    OBrowserCol(J).Close 
+	Next
+	
+      If Err.Number <> 0 Then
+      	   Reporter.ReportEvent micFail, err.number, err.description
+            Exit Function
+         Else 
+        	 Err.Clear 
+        End If         
+        On Error goto 0
+        
+End Function
+
 ''This function is used for login scenario
 ''======================================================================
 
+Function fnLogin(StrUsername,StrPassword)
 
-Function LoginInfo(StrUsername,StrPassword)
-
-	StrUsername = datatable.Value("USERNAME","Global")
-       Strpassword = datatable.Value("PASSWORD","Global")
-       
-       Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set StrUsername
-       Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").Set Strpassword
+       Browser("Dukhan Bank").ClearCache
+       Browser("Dukhan Bank").DeleteCookies
+       Browser("Dukhan Bank").Maximize
+   
+'	StrUsername = datatable.Value("USERNAME","Global")
+'       Strpassword = datatable.Value("PASSWORD","Global")    
+       Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set StrUserName
+       Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").Set StrPassword
        Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Login").DoubleClick
+       wait(5)
+       If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Exist(5) Then
+           Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click
+       End If
        
        If Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("signOut").Exist(5) Then
-       Reporter.ReportEvent micPass,"Launch Application","Application has been launched successfully"
+       Reporter.ReportEvent micPass,"Login to the Application","Login is successful"
        Else 
-       Reporter.ReportEvent micFail,"Launch Application","Application has been not been launched"
+       Reporter.ReportEvent micFail,"Login to the Application","Login was not successful"
        End If
+           
+End Function
 
+''This function is used to Log Out from the application 
+''====================================================
+Function LogOut()
+
+ 	Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("signOut").SetTOProperty "innertext","Logout"
+ 	Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("signOut").Click
+ 	wait(8)
+	setting.webpackage("ReplayType") = 2
+       Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("BtnLogOutYes").Click
+       setting.webpackage("ReplayType") = 1
+       Wait(10)
+	If Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Exist(5) Then
+	   Reporter.ReportEvent micPass,"Logout from application","Logout is Successful"
+	   Else 
+	   Reporter.ReportEvent micFail,"Logout from application","Logout is not Successful"
+	End If
+     
 End Function
 
 
-''This function is used to generate current date
-''==========================================================
-
-Function CurrentDate()
-
-	NewDate = Date
-	
-End Function
-
-''This function is used to generate previous date
-''======================================================================
-Function StrPreviousMonthDate(Minterval,months,Strdate)
-
-      Dim ONewDate
-    	ONewDate = Dateadd(Minterval,months,Strdate)
-	StrPreviousMonthDate = ONewDate
-
-End Function
 
 

@@ -1,0 +1,13 @@
+﻿<Properties>
+  <WatchEntry0 value="strRowCount" />
+  <WatchEntry1 value="StrCardType" />
+  <WatchEntry10 value="strRowCount" />
+  <WatchEntry2 value="StrNameOFCard" />
+  <WatchEntry3 value="strRowCount" />
+  <WatchEntry4 value="StrCardType" />
+  <WatchEntry5 value="StrNameOfCard" />
+  <WatchEntry6 value="StrCardLimit" />
+  <WatchEntry7 value="StrCardType" />
+  <WatchEntry8 value="StrCardType" />
+  <WatchEntry9 value="StrDeliveryBranch" />
+</Properties>

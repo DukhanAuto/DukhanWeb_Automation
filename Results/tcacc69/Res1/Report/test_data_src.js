@@ -1,0 +1,1 @@
+﻿var __testDataSource={items:[{dataFilePath:'Default.xlsx',dataFileFormat:'excel',dataFileFolder:'C:\\GitHub\\DukhanWeb_Automation\\Results\\tcacc69\\Res1',namePairs:[]}]};

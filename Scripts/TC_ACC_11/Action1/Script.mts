@@ -1,27 +1,47 @@
 ﻿''This script is used to get the statements for more then 6 months
 ''========================================================================
+strDriverSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
+strSheet="My_Accounts"
+Datatable.AddSheet strSheet
+Datatable.ImportSheet strDriverSheetPath,"My_Accounts",strSheet
+strRowCount=Datatable.GetSheet(strSheet).GetRowCount
 
-Call LoginInfo(StrUsername,StrPassword)
-wait(10)
-Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
-Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("My Accounts").Click
-Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("200000328809").Click
-Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Highlight
-Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Click
-wait(5)
+For i = 7 To strRowCount
 
-StrPastMonth = StrPreviousMonthDate("m",-8,Date)
-Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Start Date").Set StrPastMonth
-Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("End Date").Set Date 
-wait(5)
-
-If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("WebButton").Exist(5) Then 
-  reporter.ReportEvent micPass, "Last 6 months saving account transactions statements are dispalyed with given range","Statements are getting displayed"
-  Else 
-  reporter.ReportEvent micFail, "Last 6 months saving account transactions statements are not displayed with given date range","Statements are not found for saving accounts"
-End If
-
-
+	Datatable.SetCurrentRow(i)
+   	StrUsername = Datatable.Value("USERNAME",strSheet)
+       Strpassword = Datatable.Value("PASSWORD",strSheet)
+       StrAccountType = Datatable.value("SELECT_ACCOUNT_TYPE",strSheet)
+       
+	Call fnLogin(StrUsername,StrPassword)
+	wait(10)
+	Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("My Accounts").Click
+	wait(3)
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("AccountType").SetTOProperty "innertext",StrAccountType
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("AccountType").Click
+	wait(3)
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Click
+	wait(5)
+	
+	StrPastMonth = StrPreviousMonthDate("m",-8,Date)
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Start Date").Set StrPastMonth
+	Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("End Date").Set Date 
+	wait(5)
+	
+	If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("BtnDownload").Exist(5) Then 
+	  reporter.ReportEvent micPass, "Saving Account Statements","Statements displayed with selected date range"
+	Else 
+	  reporter.ReportEvent micFail, "Saving Account Statements","Statements not displayed with selected date range"
+	End If
+	
+	If i = 8 Then
+		Exit For 
+	End If
+    Call LogOut()
+    
+ Next  
+Call CloseAllBrowsers()
 
 
 

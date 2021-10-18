@@ -1,0 +1,7 @@
+﻿<Properties>
+  <WatchEntry0 value="StrActionType" />
+  <WatchEntry1 value="StrReasonType" />
+  <WatchEntry2 value="StrReasonType" />
+  <WatchEntry3 value="StrCardNumber" />
+  <WatchEntry4 value="strRowCount" />
+</Properties>
