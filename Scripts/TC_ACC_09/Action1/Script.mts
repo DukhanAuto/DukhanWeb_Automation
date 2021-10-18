@@ -6,6 +6,7 @@ Datatable.AddSheet strSheet
 Datatable.ImportSheet strDriverSheetPath,"My_Accounts",strSheet
 strRowCount=Datatable.GetSheet(strSheet).GetRowCount
 
+<<<<<<< Updated upstream
 For i = 6 To strRowCount
 
 	Datatable.SetCurrentRow(i)
@@ -44,5 +45,26 @@ For i = 6 To strRowCount
 Next
 
 Call CloseAllBrowsers()
+=======
+Call fnLogin(StrUsername,StrPassword)
+wait(10)
+Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
+Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("My Accounts").Click
+Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("200000328809").Click
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Highlight
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Recent Transactions").Click
+wait(5)
+>>>>>>> Stashed changes
 
 
+<<<<<<< Updated upstream
+=======
+If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("BtnDownload").Exist(5) Then 
+  reporter.ReportEvent micPass, "Saving Account Statements","Statements displayed with selected date range"
+Else 
+  reporter.ReportEvent micFail, "Saving Account Statements","Statements not displayed with selected date range"
+End If
+
+Call LogOut()
+Call CloseAllBrowsers()
+>>>>>>> Stashed changes

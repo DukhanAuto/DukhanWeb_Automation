@@ -48,6 +48,10 @@ For i = 5 To TotalRowCount
 	wait(5)
 	Call LogOut()
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 Next 
 
 Call CloseAllBrowsers()

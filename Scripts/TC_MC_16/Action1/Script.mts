@@ -1,5 +1,6 @@
 ﻿''This script is used to Pay Using Pay Action control
 ''============================================================
+<<<<<<< Updated upstream
 StrDataSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Cards"
 Datatable.AddSheet strSheet
@@ -54,4 +55,34 @@ For j = 2 To strRowCount-1
 
 Next  
 
+=======
+
+Call fnLogin(StrUsername,StrPassword) @@ script infofile_;_ZIP::ssf15.xml_;_
+wait(10)
+Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Cards").Click @@ script infofile_;_ZIP::ssf16.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Pay").Click @@ script infofile_;_ZIP::ssf17.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Selected Account").Click @@ script infofile_;_ZIP::ssf18.xml_;_
+wait(10)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("Exceptional Savings20000040845").Click @@ script infofile_;_ZIP::ssf19.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("convertedAmount").Set "100" @@ script infofile_;_ZIP::ssf20.xml_;_
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Pay_2").Click @@ script infofile_;_ZIP::ssf21.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Confirm").Click @@ script infofile_;_ZIP::ssf22.xml_;_
+wait(10)
+'    Browser("Dukhan Bank").TextObject("Success").Click
+If Browser("Dukhan Bank").TextObject("Success").Exist(10) Then
+    Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click
+	Reporter.ReportEvent micPass,"Pay Action control","Amount is paid to seleted card successfully"
+Else 
+    Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click
+     Reporter.ReportEvent micFail,"Pay Action control","Amount is not paid to seleted card"
+End If
+ @@ script infofile_;_ZIP::ssf23.xml_;_
+'Browser("Dukhan Bank").TextObject("■ INFINITE VIP CREDIT").Click
+Wait(10)
+Call LogOut() @@ script infofile_;_ZIP::ssf11.xml_;_
+>>>>>>> Stashed changes
 Call CloseAllBrowsers()

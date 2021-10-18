@@ -1,5 +1,6 @@
 ﻿''This script is used to Cash Advance action control
 ''=====================================================
+<<<<<<< Updated upstream
 StrDataSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Cards"
 Datatable.AddSheet strSheet
@@ -58,6 +59,35 @@ For j = 1 To strRowCount-1
 Next 
 
 wait(5)
+=======
+Call fnLogin(StrUsername,StrPassword)
+Wait(10)
+Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Cards").Click @@ script infofile_;_ZIP::ssf1.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Cash Advance").Click @@ script infofile_;_ZIP::ssf2.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Selected Account").Click @@ script infofile_;_ZIP::ssf3.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebElement("Current100000010916").Click
+Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Amount").Set "100" @@ script infofile_;_ZIP::ssf5.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Submit").Click @@ script infofile_;_ZIP::ssf6.xml_;_
+wait(3)
+Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Confirm").Click @@ script infofile_;_ZIP::ssf7.xml_;_
+
+If Browser("Dukhan Bank").TextObject("Rejected").Exist(10) Then
+    Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click
+	Reporter.ReportEvent micFail,"Cash Advance","Cash Advance payment was not successfull"
+Else 
+      Browser("Dukhan Bank").TextObject("Success").Exist(10)
+
+       Reporter.ReportEvent micPass,"Cash Advance","Cash Advance payment was successfull"
+End If
+
+wait(8)
+
+Call LogOut()
+>>>>>>> Stashed changes
 Call CloseAllBrowsers()
 '
 'straccountnumber = 100000010916

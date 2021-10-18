@@ -34,12 +34,21 @@ Function fnLogin(StrUsername,StrPassword)
        Browser("Dukhan Bank").Maximize
    
 '	StrUsername = datatable.Value("USERNAME","Global")
+<<<<<<< Updated upstream
 '       Strpassword = datatable.Value("PASSWORD","Global")    
+=======
+'       Strpassword = datatable.Value("PASSWORD","Global")
+     
+>>>>>>> Stashed changes
        Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Username").Set StrUserName
        Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Password").Set StrPassword
        Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Login").DoubleClick
        wait(5)
+<<<<<<< Updated upstream
        If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Exist(5) Then
+=======
+       If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").exist(5) Then
+>>>>>>> Stashed changes
            Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click
        End If
        
