@@ -233,7 +233,7 @@ End Function
 '		OReg.Pattern = "((Current)|(Saving)|(Faseel)).[0-9]{12}"
 'set omatches = OReg.test(stfile)
 'Print omatches.count
-<<<<<<< Updated upstream
+
 ''=============================================
 'Set WSH = CreateObject("WScript.Shell")
 'WSH.SendKeys "^+{DELETE}"
@@ -241,6 +241,4 @@ End Function
 'systemutil.Run "Chrome.exe","chrome://settings/clearBrowserData"
 
 'Browser("Dukhan Bank").
-=======
 
->>>>>>> Stashed changes

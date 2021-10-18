@@ -65,7 +65,10 @@ For j = 1 To strRowCount-1
 	Browser("Dukhan Bank").Page("Dukhan Bank").WebEdit("Remarks").Set StrRemarks @@ script infofile_;_ZIP::ssf59.xml_;_
 	wait(5)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
        Browser("Dukhan Bank").Page("Dukhan Bank").Sync
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 	Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Submit").Click @@ script infofile_;_ZIP::ssf60.xml_;_
@@ -75,11 +78,14 @@ For j = 1 To strRowCount-1
 	Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("Ok").Click @@ script infofile_;_ZIP::ssf88.xml_;_
       wait(8)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       
       If j = 2 Then
       	 Exit For
       End If
       
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       Call LogOut()

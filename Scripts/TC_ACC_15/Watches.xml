@@ -2,7 +2,10 @@
   <WatchEntry0 value="StrFilepath" />
   <WatchEntry1 value="StrFilepath" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <WatchEntry2 value="Browser(&quot;Dukhan Bank&quot;).Page(&quot;Dukhan Bank&quot;).WebElement(&quot;signOut&quot;).Click" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 </Properties>

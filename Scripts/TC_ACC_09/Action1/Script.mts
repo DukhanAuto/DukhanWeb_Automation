@@ -7,6 +7,7 @@ Datatable.ImportSheet strDriverSheetPath,"My_Accounts",strSheet
 strRowCount=Datatable.GetSheet(strSheet).GetRowCount
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 For i = 6 To strRowCount
 
 	Datatable.SetCurrentRow(i)
@@ -46,6 +47,8 @@ Next
 
 Call CloseAllBrowsers()
 =======
+=======
+>>>>>>> Stashed changes
 Call fnLogin(StrUsername,StrPassword)
 wait(10)
 Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
@@ -58,7 +61,10 @@ wait(5)
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("BtnDownload").Exist(5) Then 
   reporter.ReportEvent micPass, "Saving Account Statements","Statements displayed with selected date range"
 Else 
@@ -67,4 +73,7 @@ End If
 
 Call LogOut()
 Call CloseAllBrowsers()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -1,6 +1,7 @@
 ﻿''This script is used to Cash Advance action control
 ''=====================================================
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 StrDataSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Cards"
 Datatable.AddSheet strSheet
@@ -60,6 +61,8 @@ Next
 
 wait(5)
 =======
+=======
+>>>>>>> Stashed changes
 Call fnLogin(StrUsername,StrPassword)
 Wait(10)
 Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Cards").Click @@ script infofile_;_ZIP::ssf1.xml_;_
@@ -87,6 +90,9 @@ End If
 wait(8)
 
 Call LogOut()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Call CloseAllBrowsers()
 '

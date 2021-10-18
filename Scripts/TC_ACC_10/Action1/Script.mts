@@ -1,12 +1,15 @@
 ﻿''This script is used to get the last month statements for saving account 
 ''=====================================================================================
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 strDriverSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Accounts"
 Datatable.AddSheet strSheet
 Datatable.ImportSheet strDriverSheetPath,"My_Accounts",strSheet
 strRowCount=Datatable.GetSheet(strSheet).GetRowCount
 =======
+=======
+>>>>>>> Stashed changes
 Call fnLogin(StrUsername,StrPassword)
 wait(10)
 Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
@@ -54,8 +57,11 @@ For i = 7 To strRowCount
 	End If
 	Call LogOut()
 
+<<<<<<< Updated upstream
 Next 
 =======
+=======
+>>>>>>> Stashed changes
 If Browser("Dukhan Bank").Page("Dukhan Bank").WebButton("BtnDownload").Exist(5) Then 
   reporter.ReportEvent micPass,"Saving Account Statements","Statements displayed with selected date range"
 Else 
@@ -63,5 +69,8 @@ Else
 End If
 
 Call LogOut()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Call CloseAllBrowsers()

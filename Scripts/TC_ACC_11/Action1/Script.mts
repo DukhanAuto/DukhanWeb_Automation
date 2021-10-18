@@ -7,6 +7,7 @@ Datatable.AddSheet strSheet
 Datatable.ImportSheet strDriverSheetPath,"My_Accounts",strSheet
 strRowCount=Datatable.GetSheet(strSheet).GetRowCount
 
+<<<<<<< Updated upstream
 For i = 7 To strRowCount
 
 	Datatable.SetCurrentRow(i)
@@ -44,6 +45,8 @@ For i = 7 To strRowCount
  Next  
 =======
 
+=======
+>>>>>>> Stashed changes
 Call fnLogin(StrUsername,StrPassword)
 wait(10)
 Browser("Dukhan Bank").Page("Dukhan Bank").Link("My Accounts").Click
@@ -65,6 +68,9 @@ Else
 End If
 
 Call LogOut()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Call CloseAllBrowsers()
 

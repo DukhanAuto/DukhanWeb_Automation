@@ -1,6 +1,7 @@
 ﻿''This script is used to Pay Using Pay Action control
 ''============================================================
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 StrDataSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Cards"
 Datatable.AddSheet strSheet
@@ -56,6 +57,8 @@ For j = 2 To strRowCount-1
 Next  
 
 =======
+=======
+>>>>>>> Stashed changes
 
 Call fnLogin(StrUsername,StrPassword) @@ script infofile_;_ZIP::ssf15.xml_;_
 wait(10)
@@ -84,5 +87,8 @@ End If
 'Browser("Dukhan Bank").TextObject("■ INFINITE VIP CREDIT").Click
 Wait(10)
 Call LogOut() @@ script infofile_;_ZIP::ssf11.xml_;_
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Call CloseAllBrowsers()

@@ -1,6 +1,7 @@
 ﻿''This script is used to download the saving account statements for all the transactions 
 ''====================================================================================
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 strDriverSheetPath = "C:\GitHub\DukhanWeb_Automation\Test Data\Test Data.xlsx"
 strSheet="My_Accounts"
 Datatable.AddSheet strSheet
@@ -68,6 +69,8 @@ Browser("Dukhan Bank").InsightObject("ClearDownloads").Click 20,30
 setting.webpackage("ReplayType") = 1
 Browser("Dukhan Bank").InsightObject("ClearDownloads").Highlight
 =======
+=======
+>>>>>>> Stashed changes
 
 Call fnLogin(StrUsername,StrPassword)
 wait(10)
@@ -112,4 +115,7 @@ Call CloseAllBrowsers()
 	
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
